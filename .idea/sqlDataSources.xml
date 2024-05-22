@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="068f7011-aa3f-45ac-962c-63d3a934b2c9" name="booking@localhost Mapping">
+      <data-sources db="a7a990ed-db1a-4801-996d-6376a4194515" ddl="e95641ff-c3df-4a44-99ad-7e7646ec68d6" />
+      <scope>
+        <node kind="schema" qname="booking" />
+      </scope>
+    </mapping>
+  </component>
+</project>
