@@ -25,11 +25,11 @@ public class Main {
             PreparedStatement preparedStatement = connection.prepareStatement("insert into utente(username, password, email) value (?,?,?)");
             Scanner scanner = new Scanner(System.in);
             System.out.print("Quanti utenti vuoi inserire: ");
-            int n = scanner.nextInt();
+            int n = new Scanner(System.in).nextInt();
             System.out.println(" ");
             for (int i = 0; i < n; i++) {
 
-                System.out.print("Inserisci username");
+                System.out.print("Inserisci username:");
                 String username = scanner.nextLine();
 
                 System.out.print("Inserisci password: ");
