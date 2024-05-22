@@ -5,7 +5,10 @@ import java.util.Scanner;
 
 
 public class Main {
-    private static boolean checkInput(String input){
+    private static boolean checkInput(String username, String password, String email){
+        return checkString(username) && checkString(password) && checkString(email);
+    }
+    private static boolean checkString(String input){
         return !input.contains(";");
     }
     public static void main(String[] args){
@@ -27,7 +30,7 @@ public class Main {
                 System.out.print("Inserisci email: ");
                 String email = scanner.nextLine();
 
-                if (checkInput(username) && checkInput(passwd) && checkInput(email)){
+                if (checkInput(username, passwd, email)){
                     preparedStatement.setString(1,username);
                     preparedStatement.setString(2,passwd);
                     preparedStatement.setString(3,email);
