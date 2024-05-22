@@ -11,6 +11,14 @@ public class Main {
     private static boolean checkString(String input){
         return !input.contains(";");
     }
+    private static void viewUtenti(Connection conn) throws SQLException {
+        ResultSet rs = conn.createStatement().executeQuery("select username, email from utente");
+        while (rs.next()) {
+            String utente = rs.getString("username");
+            String email = rs.getString("email");
+            System.out.println("utente: " + utente + " email: " + email);
+        }
+    }
     public static void main(String[] args){
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/booking", "chris", "ciao1234");
@@ -39,6 +47,7 @@ public class Main {
                     System.out.println("possibile injection");
                 }
             }
+            viewUtenti(connection);
             connection.close();
         } catch (RuntimeException e) {
             throw new RuntimeException(e);
