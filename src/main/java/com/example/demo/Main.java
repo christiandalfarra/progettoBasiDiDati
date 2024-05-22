@@ -42,18 +42,18 @@ public class Main {
                     preparedStatement.setString(1,username);
                     preparedStatement.setString(2,passwd);
                     preparedStatement.setString(3,email);
-                    preparedStatement.execute();
+                    try{
+                        preparedStatement.execute();
+                    }catch (SQLIntegrityConstraintViolationException e){
+                        System.out.println(e.getMessage());
+                    }
                 }else{
                     System.out.println("possibile injection");
                 }
             }
             viewUtenti(connection);
             connection.close();
-        } catch (RuntimeException e) {
-            throw new RuntimeException(e);
-        } catch (SQLIntegrityConstraintViolationException e){
-            System.out.println(e.getMessage());
-        } catch (SQLException e) {
+        } catch (RuntimeException | SQLException e) {
             throw new RuntimeException(e);
         }
     }
