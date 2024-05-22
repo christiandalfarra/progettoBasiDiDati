@@ -14,9 +14,9 @@ public class Main {
     private static void viewUtenti(Connection conn) throws SQLException {
         ResultSet rs = conn.createStatement().executeQuery("select username, email from utente");
         while (rs.next()) {
-            String utente = rs.getString("username");
+            String username = rs.getString("username");
             String email = rs.getString("email");
-            System.out.println("utente: " + utente + " email: " + email);
+            System.out.println("username: " + username + ", email: " + email);
         }
     }
     public static void main(String[] args){
