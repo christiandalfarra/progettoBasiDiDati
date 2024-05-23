@@ -1,10 +1,6 @@
 package com.example.demo;
 
-import org.hibernate.Session;
-
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 
@@ -37,7 +33,6 @@ public class Main {
             System.out.println(" ");
             for (int i = 0; i < n; i++) {
 
-                Utente user = new Utente();
                 System.out.print("Inserisci username:");
                 String username = scanner.nextLine();
 
