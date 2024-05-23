@@ -68,32 +68,4 @@ public class Main {
             throw new RuntimeException(e);
         }
     }
-
-    public static abstract class RowMapper<E> {
-
-        public List<E> process(ResultSet rs) throws SQLException {
-            List<E> objectList = new ArrayList<>();
-
-            while (rs.next()) {
-                objectList.add(mapRow(rs));
-            }
-            return objectList;
-        }
-
-        abstract E mapRow(ResultSet rs) throws SQLException;
-    }
-
-    public class UserMapper extends RowMapper<Utente> {
-
-        @Override
-        public Utente mapRow(ResultSet rs) throws SQLException {
-            Utente user = new Utente();
-
-            user.setUsername(rs.getString("username"));
-            user.setEmail(rs.getString("email"));
-
-            return user;
-        }
-
-    }
 }
